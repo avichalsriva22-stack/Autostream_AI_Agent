@@ -89,7 +89,7 @@ Notes:
 - Environment variables control LLM providers/keys (e.g., `OPENAI_API_KEY`, `GOOGLE_API_KEY`, `LLM_PROVIDER`).
 - The repository includes example scripts and `setup_env.ps1` to help with Windows setup.
 
-## Architecture Explanation (≈200 words)
+## Architecture Explanation 
 
 This agent composes a small pipeline built around LangGraph (for stateful graph-based orchestration) and AutoGen-style patterns for modular tool and LLM interactions. LangGraph provides an explicit state graph and checkpoint/saver primitives, which makes reasoning about conversational flows and long-running sessions straightforward: each node represents a step (question, tool call, validation), and the graph enforces ordering and state transitions. AutoGen-style components simplify writing small, testable tools (e.g., knowledge retrieval, lead-capture) and let the LLM orchestrate high-level decisions while guarded logic enforces safety.
 
@@ -140,5 +140,6 @@ Implementation notes and tips:
 - App entrypoints: [main.py](main.py), [ingest.py](ingest.py)
 - Node/tool definitions: [nodes.py](nodes.py)
 - State types and persistence: [state.py](state.py)
+
 
 
